@@ -1,6 +1,6 @@
 require_relative 'lib/database_connection'
-require_relative 'lib/artist_repository'
-require_relative 'lib/album_repository'
+require './lib/artist_repository'
+require './lib/album_repository'
 
 DatabaseConnection.connect('music_library')
 
@@ -12,7 +12,25 @@ DatabaseConnection.connect('music_library')
 
 album_repository = AlbumRepository.new
 
-album_repository.all.each do |album|
-    p album.title
-end
+p album_repository.find(1).title
+# album_repository.all.each do |album|
+#     p album.title
+# end
+
+repository = AlbumRepository.new
+
+album = Album.new
+album.title = 'Trompe le Monde'
+album.release_year = 1991
+album.artist_id = 7
+
+repository.create(album)
+
+all_albums = repository.all
+
+p all_albums
+
+
+
+
 

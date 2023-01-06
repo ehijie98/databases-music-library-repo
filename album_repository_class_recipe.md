@@ -130,8 +130,14 @@ class AlbumRepository
 
   # Add more methods below for each operation you'd like to implement.
 
-  # def create(album)
-  # end
+  # Inserts a new album record
+  # One argument: a new Album object
+  def create(album)
+    # Executes the SQL query:
+    # INSERT INTO albums (title, release_year, artist_id) VALUES($1, $2, $3);
+
+    # Does not need to return anything
+  end
 
   # def update(album)
   # end

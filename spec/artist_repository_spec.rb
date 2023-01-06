@@ -21,7 +21,4 @@ RSpec.describe ArtistRepository do
         expect(artists[0].id).to eq "1"
         expect(artists[0].name).to eq "Pixies"
     end
-
- 
-
 end
