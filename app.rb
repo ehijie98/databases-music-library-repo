@@ -4,6 +4,8 @@ require_relative './lib/album_repository'
 require_relative './lib/artist_repository'
 require_relative './lib/database_connection'
 
+
+
 class Application
 
     # The Application class initializer
@@ -32,6 +34,13 @@ class Application
         @io.puts "1 - List all albums"
         @io.puts "2 - List all artists"
         @io.puts "Enter your choice"
+        get_choice
+
+    end
+
+    private
+
+    def get_choice
         input = @io.gets
         fail "Please ensure input is either 1 or 2" unless input.to_i == 1 || input.to_i == 2
         if input.to_i == 1
