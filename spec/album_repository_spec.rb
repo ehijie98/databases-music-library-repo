@@ -21,8 +21,8 @@ RSpec.describe AlbumRepository do
 
     expect(albums.length).to eq 2
     expect(albums[0].title).to eq "Homework"
-    expect(albums[0].release_year).to eq "1997"
-    expect(albums[0].artist_id).to eq '1'
+    expect(albums[0].release_year).to eq 1997
+    expect(albums[0].artist_id).to eq 1
   end
     
   context "in a table with two recorded albums" do
@@ -32,8 +32,8 @@ RSpec.describe AlbumRepository do
       album = repo.find(1)
 
       expect(album.title).to eq "Homework"
-      expect(album.release_year).to eq "1997"
-      expect(album.artist_id).to eq "1"
+      expect(album.release_year).to eq 1997
+      expect(album.artist_id).to eq 1
     end
 
     it "returns Take Care as a single album" do
@@ -42,8 +42,8 @@ RSpec.describe AlbumRepository do
       album = repo.find(2)
 
       expect(album.title).to eq "Take Care"
-      expect(album.release_year).to eq "2011"
-      expect(album.artist_id).to eq "2"
+      expect(album.release_year).to eq 2011
+      expect(album.artist_id).to eq 2
     end
   end
 
@@ -62,8 +62,8 @@ RSpec.describe AlbumRepository do
     expect(all_albums).to include(
       have_attributes(
         title: new_album.title, 
-        release_year: '1991',
-        artist_id: '3'
+        release_year: 1991,
+        artist_id: 3
       )
     )
   end
